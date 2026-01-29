@@ -1,139 +1,594 @@
-*{
-  padding:0;
-  margin:0;
+/* Reset */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
 
+/* Body */
 body {
+  font-family: 'Segoe UI', serif;
   background-color: black;
-  font-size: 15px;
-  font-family: serif;
   color: grey;
+  line-height: 1.5;
 }
 
-#nav{
-  gap: 13px;
-  color:goldenrod;
-  padding: 8px;
+/* Navigation */
+#nav {
   background-color: black;
-  
+  color: goldenrod;
+  padding: 10px 20px;
 }
 
-li{
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-menu {
+  display: flex;
   list-style: none;
-   
+  gap: 20px;
 }
 
-a{
-  color:goldenrod;
-  text-decoration: none; 
+.nav-menu li a {
+  color: goldenrod;
+  text-decoration: none;
 }
 
-ul{
-  display:flex;
-  flex-direction: row;
-  gap:15px;
-  margin-left: 120vh;
+#login {
+  background-color: goldenrod;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
 }
 
-#hero-h{
-  color: gold;
-  font-size:40px;
-  text-align: center;
-}
-
-h2{
+/* Hamburger menu */
+.hamburger {
+  display: none;
   font-size: 25px;
-  color: gold;
-}
-span{
-  color:gold;
-  font-size: 23px;
-}
-p{
+  cursor: pointer;
   color: goldenrod;
 }
 
-#hero-par{
-color: grey;
-font-size: 30px;
-margin: 20vh;
-}
-
+/* Hero Section */
 .hero {
-  background-image: url("image/img1.jpg");
-  background-size: cover;
-  background-position: center;
-  height: 80vh; 
-  position: relative;
-
-}
-
-#card-content{
+  background: url("img1.jpg") no-repeat center center/cover;
+  height: 80vh;
   display: flex;
-  gap: 34px;
-  margin-top:45px;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 20px;
 }
 
-.card ,.card1,.card2{
-  background: black;
-  padding:50px;
+.hero h1 {
+  font-size: 3.5rem;
+  color: gold;
+  margin-bottom: 15px;
+}
+
+.hero p {
+  color: white;
+  font-size: 2.2rem;
+  max-width: 700px;
+  margin: 0 auto 20px;
+}
+
+.hero-buttons button {
+  padding: 20px 50px;
+  margin: 5px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  font-size: 23px;
+}
+
+#signup {
+  background-color: goldenrod;
+  color: black;
+}
+
+#learnmore {
+  background-color: rgba(0,0,0,0.3);
+  color: goldenrod;
+}
+
+#learnmore a {
+  color: goldenrod;
+  text-decoration: none;
+}
+
+/* Packages Section */
+.packages {
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.packages h1 {
+  color: gold;
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.packages p {
+  color: grey;
+  margin-bottom: 30px;
+}
+
+/* Cards */
+#card-content {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.card, .card1, .card2 {
+  background-color: black;
+  border-radius: 15px;
+  border: 2px solid grey;
+  padding: 20px;
+  width: 300px;
+  color: grey;
+  text-align: left;
+}
+
+.card1 {
+  border-color: goldenrod;
+}
+
+.card h2 {
+  color: gold;
+  margin-bottom: 10px;
+}
+
+.card span {
+  color: gold;
+}
+
+.card ul {
+  margin: 10px 0;
+  padding-left: 20px;
+}
+
+.card button.book-btn {
+  width: 100%;
+  padding: 10px;
+  border-radius: 6px;
+  border: none;
+  background-color: goldenrod;
+  color: black;
+  cursor: pointer;
+}
+
+/* Testimonials Section */
+.testimonials-section {
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.testimonials-section h2 {
+  color: gold;
+  margin-bottom: 20px;
+}
+
+.testimonials {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.testimonial-card {
+  background-color: #111;
+  border: 1px solid grey;
+  border-radius: 10px;
+  padding: 15px;
+  width: 250px;
+  color: grey;
+  text-align: center;
   display: flex;
   flex-direction: column;
-  border-radius: 15px;
-  border-color: whitesmoke;
-  border-style: ridge;
-  color:darkgrey;
-  height: 35vh;
-  max-width: 35vh;
+  align-items: center;
 }
 
-.card1{
-  border-color:goldenrod;
+.testimonial-img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 10px;
+  border: 2px solid gold;
 }
 
-#login{
-  background-color:goldenrod;
-  padding: 5px;
-  width: 60px;
-  border-radius: 6px;
-  border-style: none;
-  border-color: black;
-}
-
-#signup, #learnmore{
-    margin-left: 50vh;
-    width: 18%;
-    padding: 15px;
-    background-color:goldenrod;
-    border-radius: 6px;
-    border-style: none;
-    border-color: black;
-}
-
-#learnmore{
-  margin-left: 35px;
-  background: rgba(0, 0, 0, 0.2);
-  color:goldenrod;
-  font-size: 15px;
-}
-#sms{
+.testimonial-name {
+  font-weight: bold;
   color: gold;
-  font-size: 34px;
-  text-align: center;
-  margin-top: 35px;
-
+  margin-bottom: 5px;
 }
 
-p{
-  color: gray;
-  margin-top: 12px;
+.testimonial-stars {
+  color: gold;
+  margin-bottom: 10px;
+}
+
+.testimonial-message {
+  font-size: 0.9rem;
+  color: grey;
+}
+
+/* Contact Section */
+.contact-section {
+  padding: 50px 20px;
+  background-color: #111;
   text-align: center;
 }
 
-#Premium{
+.contact-section h2 {
+  color: gold;
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.contact-section p {
+  color: grey;
+  margin-bottom: 30px;
+}
+
+.contact-section form {
+  max-width: 500px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.contact-section input,
+.contact-section textarea {
+  padding: 12px;
+  border-radius: 6px;
+  border: 1px solid #555;
+  background-color: #222;
+  color: #fff;
+  resize: none;
+}
+
+.contact-section input:focus,
+.contact-section textarea:focus {
+  border-color: gold;
+  outline: none;
+}
+
+.contact-section button {
+  padding: 12px;
+  border-radius: 6px;
+  border: none;
+  background-color: gold;
+  color: black;
+  cursor: pointer;
+}
+
+.contact-section button:hover {
+  background-color: #e6c200;
+}
+
+/* Package Details Section */
+.package-details {
+  padding: 50px 20px;
+  text-align: center;
+  color: grey;
+  background: #000;
+}
+
+.package-details h1 {
+  color: gold;
+  font-size: 36px;
+  margin-bottom: 10px;
+}
+
+.package-details p {
+  color: #555;
+  font-size: 1.1rem;
+  margin-bottom: 50px;
+}
+
+/* Package Content Inline Layout */
+.package-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  align-items: flex-start;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Images Grid */
+.package-images {
+  flex: 1;
+  min-width: 300px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.image-box {
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+  border-color: white;
+}
+
+.image-box img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+}
+
+.image-text {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background: rgba(0,0,0,0.6);
+  color: #fff;
+  text-align: center;
   padding: 10px;
-  width:90%;
+  font-size: 16px;
+}
+
+/* Package Info */
+.package-info {
+  flex: 1;
+  min-width: 300px;
+  background: #000;
+  border-color:#fff;
+  border:  2px solid gold;
+  padding: 40px;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  text-align: left;
+}
+
+.package-info h2 {
+  color: gold;
+  margin-bottom: 15px;
+}
+
+.package-info h3 {
+  margin: 20px 0;
+  font-size: 28px;
+}
+
+.package-info span {
+  color: #c59d5f;
+  font-weight: bold;
+}
+
+.package-info ul {
+  list-style: none;
+  padding: 0;
+}
+
+.package-info ul li {
+  margin-bottom: 12px;
+  color: #444;
+}
+
+/* Book Button */
+.book-btn {
+  margin-top: 20px;
+  padding: 14px 30px;
+  background: #c59d5f;
+  color: white;
+  border: none;
   border-radius: 8px;
+  cursor: pointer;
+}
+
+.book-btn:hover {
+  background: #b0894a;
+}
+
+/* ===== Mobile Responsive ===== */
+@media (max-width: 900px) {
+
+  .package-content {
+    flex-direction: column;
+    align-items: center;       /* Center the content */
+    text-align: center;        /* Center text inside package-info */
+    margin-left: auto;
+    margin-right: auto;
+    gap: 20px;                 /* Add spacing between images and info */
+  }
+
+  .package-images {
+    grid-template-columns: 1fr;
+    gap: 15px;                 /* Slightly smaller gap for mobile */
+  }
+
+  .image-box img {
+    height: 180px;
+  }
+
+  .package-info {
+    padding: 20px;             /* Reduce padding on mobile */
+    width: 90%;                /* Make card smaller and centered */
+  }
+
+  .package-info ul li {
+    text-align: center;        /* Center the list items */
+    color: #ccc;
+  }
+
+  .book-btn {
+    width: 100%;               /* Button spans full width on mobile */
+    margin: 15px 0 0 0;
+  }
+  .hero-buttons button {
+  padding: 14px 20px;
+}
+
+/* ===== Hamburger Menu for Mobile ===== */
+@media (max-width: 768px) {
+  .nav-menu {
+    display: none;
+    flex-direction: column;
+    gap: 15px;
+    background-color: black;
+    position: absolute;
+    top: 50px;
+    right: 0;
+    padding: 20px;
+    border-radius: 6px;
+  }
+
+  .nav-menu.active {
+    display: flex;
+  }
+
+  .hamburger {
+    display: block;
+  }
+  
+.hero-buttons button {
+  padding: 12px 20px;
+  font-size: 16px;
+  
+}
+.hero h1 {
+  font-size: 2.5rem;
+  
+}
+
+.hero p {
+  color: white;
+  font-size: 1.2rem;
+}
+}
+
+/* ===== Desktop Responsive Fix ===== */
+@media (min-width: 1025px) {
+
+  /* Package content side by side */
+  .package-content {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  /* Package images grid */
+  .package-images {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  .image-box img {
+    height: 250px;
+  }
+
+  .image-text {
+    font-size: 16px;
+    padding: 10px;
+  }
+
+  /* Package Info adjustments */
+  .package-info {
+    padding: 40px;
+  }
+
+  .package-info h3 {
+    font-size: 28px;
+  }
+
+  .package-info ul li {
+    margin-bottom: 12px;
+  }
+
+  .book-btn {
+    padding: 14px 30px;
+    font-size: 16px;
+  }
+}
+
+/* Footer */
+.footer {
   background-color: goldenrod;
-  font-size: 14px;
+  color: grey;
+  padding: 40px 20px 20px 20px;
+  font-size: 0.9rem;
+}
+
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  max-width: 1200px;
+  margin: auto;
+  gap: 20px;
+}
+
+.footer-logo h2 {
+  color: gold;
+  margin-bottom: 15px;
+}
+
+.footer-links {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.footer-links a {
+  color: grey;
+  text-decoration: none;
+}
+
+.footer-links a:hover {
+  color: gold;
+}
+
+.footer-contact p {
+  margin-bottom: 8px;
+  color: grey;
+}
+
+.footer-bottom {
+  text-align: center;
+  border-top: 1px solid grey;
+  padding-top: 15px;
+  margin-top: 20px;
+  color: grey;
+  font-size: 0.85rem;
+}
+
+/* Responsive Footer */
+@media (max-width: 768px) {
+  .footer-container {
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+  }
+
+  .footer-links {
+    flex-direction: row;
+    gap: 15px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .footer-contact p {
+    text-align: center;
+  }
+}
+
+a{
+  font-size:26px;
+  color:gold;
 }

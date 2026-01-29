@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="auth.css">
+  <link rel="stylesheet" href="styles.css">
+  <title>Payment Success</title>
+</head>
+<body>
+
+<nav id="nav1">
+  <div class="nav-container">
+    <a href="package-details.html" class="back-icon">
+      <i class="fas fa-arrow-left"></i>
+    </a>
+    <div class="logo">Rihlah Travel</div>
+  </div>
+</nav>
+
+<div class="auth-container">
+  <h1>Payment Submitted ✅</h1>
+  <p style="color:#ccc; margin-bottom:20px;">
+    Thank you for your payment. You can finish your booking below.
+  </p>
+
+  <div id="booking-info" style="background:#111;padding:15px;border-radius:8px;margin-bottom:20px;"></div>
+
+  <!-- Finish Booking Button -->
+  <button id="finishBtn" style="margin-top:20px; padding:12px; width:100%; border:none; border-radius:6px; background:gold; color:black; font-size:16px; cursor:pointer;">
+    Finish Booking
+  </button>
+</div>
+
+<script>
+  const bookingInfoDiv = document.getElementById('booking-info');
+  const finishBtn = document.getElementById('finishBtn');
+
+  const userInfo = JSON.parse(localStorage.getItem('userInfo'));
+  const bookingInfo = JSON.parse(localStorage.getItem('bookingInfo'));
+  const paymentInfo = JSON.parse(localStorage.getItem('paymentInfo'));
+
+  if(!paymentInfo){
+    alert("No payment info found!");
+    window.location.href = "package-details.html";
+  } else {
+    const ref = 'RIH' + Math.floor(Math.random() * 1000000);
+
+    bookingInfoDiv.innerHTML = `
+      <p><strong>Booking Reference:</strong> ${ref}</p>
+      <p><strong>Name:</strong> ${userInfo.name}</p>
+      <p><strong>Email:</strong> ${userInfo.email}</p>
+      <p><strong>Package:</strong> ${paymentInfo.package.charAt(0).toUpperCase() + paymentInfo.package.slice(1)}</p>
+      <p><strong>Price:</strong> ${paymentInfo.price}</p>
+      <p><strong>Travel Date:</strong> ${bookingInfo.date}</p>
+      <p><strong>Number of Pilgrims:</strong> ${bookingInfo.people}</p>
+      <p><strong>Room Type:</strong> ${bookingInfo.room}</p>
+      <p><strong>Passport Number:</strong> ${bookingInfo.passport}</p>
+      <p><strong>Bank Accounts:</strong><br/>
+         CBE: 100012345678<br/>
+         Abyssinia: 200098765432
+      </p>
+      <p><strong>Payment Screenshot:</strong></p>
+      <img src="${paymentInfo.screenshot}" alt="Payment Screenshot" style="width:100%;border-radius:6px;margin-top:10px;">
+    `;
+  }
+
+  finishBtn.addEventListener("click", () => {
+    const confirmed = confirm("Do you want to finish booking and go back home?");
+    if(confirmed){
+      // Clear all saved data
+      localStorage.removeItem("paymentInfo");
+      localStorage.removeItem("bookingInfo");
+      localStorage.removeItem("userInfo");
+
+      // Redirect to home/package page
+      window.location.href = "package-details.html";
+    }
+  });
+</script>
+
+</body>
+</html>

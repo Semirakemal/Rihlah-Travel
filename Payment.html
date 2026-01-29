@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="auth.css">
+  <link rel="stylesheet" href="styles.css">
+  <title>Payment</title>
+</head>
+<body>
+
+<nav id="nav1">
+  <div class="nav-container">
+    <a href="booking-details.html" class="back-icon">
+      <i class="fas fa-arrow-left"></i>
+    </a>
+    <div class="logo">Rihlah Travel</div>
+  </div>
+</nav>
+
+<div class="auth-container">
+  <h1>Choose Package & Pay</h1>
+  <form id="paymentForm">
+
+    <label>Choose Package</label>
+    <select id="package" required style="width:100%;padding:10px;border-radius:6px;background:#222;color:#fff;border:1px solid #555;">
+      <option value="">Select package</option>
+      <option value="essential">Umrah Essential</option>
+      <option value="premium">Umrah Premium</option>
+      <option value="hajj">Hajj Package</option>
+    </select>
+
+    <p id="price" style="margin:15px 0;color:gold;font-weight:bold;">Total Price: —</p>
+
+    <div style="background:#111;padding:15px;border-radius:8px;margin-bottom:15px;">
+      <p style="color:gold;font-weight:bold;">Pay To:</p>
+      <p>CBE: <strong>100012345678</strong></p>
+      <p>Abyssinia Bank: <strong>200098765432</strong></p>
+      <p style="font-size:13px;color:#aaa;">Account Name: Rihlah Travel</p>
+    </div>
+
+    <label>Upload Payment Screenshot</label>
+    <input type="file" id="screenshot" accept="image/*" required>
+
+    <button type="submit">Submit Payment</button>
+  </form>
+</div>
+<script src="flow.js"></script>
+
+</body>
+</html>

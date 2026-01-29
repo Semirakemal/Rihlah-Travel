@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="auth.css">
+  <link rel="stylesheet" href="styles.css">
+  <title>Booking Details</title>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="nav1">
+  <div class="nav-container">
+    <a href="signup.html" class="back-icon">
+      <i class="fas fa-arrow-left"></i>
+    </a>
+    <div class="logo">Rihlah Travel</div>
+  </div>
+</nav>
+
+<div class="auth-container">
+  <h1>Booking Details</h1>
+  <p style="color:#ccc; margin-bottom:20px;">
+    Complete the details to continue your Umrah booking
+  </p>
+
+  <form id="bookingForm">
+    <label for="date">Travel Date</label>
+    <input type="date" id="date" required>
+
+    <label for="people">Number of Pilgrims</label>
+    <input type="number" id="people" min="1" placeholder="e.g. 2" required>
+
+    <label for="room">Room Type</label>
+    <select id="room" required style="width:100%; padding:10px; border-radius:6px; background:#222; color:#fff; border:1px solid #555;">
+      <option value="">Select room type</option>
+      <option>Single</option>
+      <option>Double</option>
+      <option>Triple</option>
+      <option>Quad</option>
+    </select>
+
+    <label for="passport">Passport Number</label>
+    <input type="text" id="passport" placeholder="Enter passport number" required>
+
+    <button type="submit">Continue</button>
+  </form>
+</div>
+
+<script src="flow.js"></script>
+
+</body>
+</html>

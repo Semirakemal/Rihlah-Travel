@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">  
+  <link rel="stylesheet" href="auth.css">
+    <link rel="stylesheet" href="styles.css">
+  <title>Sign Up</title>
+</head>
+<body>
+<!-- Navigation -->
+<nav id="nav1">
+  <div class="nav-container">
+    <a href="index.html" class="back-icon"><i class="fas fa-arrow-left"></i> </a>
+    <div class="logo">Rihlah Travel</div>
+   
+  </div>
+</nav>
+
+  <div class="auth-container">
+    <h1>Create an Account</h1>
+    <form id="signup-form">
+      <label for="name">Full Name</label>
+      <input type="text" id="name" placeholder="Enter your full name" required>
+
+      <label for="email">Email</label>
+      <input type="email" id="email" placeholder="Enter your email" required>
+
+      <label for="password">Password</label>
+      <input type="password" id="password" placeholder="Enter password" required>
+
+      <label for="confirm-password">Confirm Password</label>
+      <input type="password" id="confirm-password" placeholder="Confirm password" required>
+
+      <button type="submit">Sign Up</button>
+      <p class="auth-msg">Already have an account? <a href="signin.html">Sign In</a></p>
+    </form>
+  </div>
+
+  <script src="flow.js"></script>
+</body>
+</html>
