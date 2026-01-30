@@ -40,9 +40,9 @@ const paymentForm = document.getElementById("paymentForm");
 
 if(packageSelect){
   const prices = {
-    essential: "45,000 ETB",
-    premium: "75,000 ETB",
-    hajj: "350,000 ETB"
+    essential: "$2,499",
+    premium: "$3,999",
+    hajj: "$6,999"
   };
 
   packageSelect.addEventListener("change", () => {
